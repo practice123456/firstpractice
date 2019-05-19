@@ -1,0 +1,79 @@
+import java.util.Scanner;
+import java.lang.Math;
+class Untitled 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int playerWins = 0;
+		int computerWins = 0;
+		System.out.println("Enter in 1 to play; enter in 2 to quit: ");
+		int input = sc.nextInt();
+		while (input != 2)
+		{
+			while ((input != 1) && (input != 2))
+			{
+				System.out.println("Invalid choice");
+				System.out.println("Enter in 1 to play; enter in 2 to quit: ");
+				input = sc.nextInt();
+			}
+			System.out.println("Enter in 1 for rock, 2 for paper, or 3 for scissors: ");
+			int choice = sc.nextInt();
+			int computer = (int)(Math.random() * 3) + 1;
+			if (choice == 1)
+			{
+				System.out.println("You chose rock");
+			}
+			else if (choice == 2)
+			{
+				System.out.println("You chose paper");
+			}
+			else if (choice == 3)
+			{
+				System.out.println("You chose scissor");
+			}
+			if (computer == 1)
+			{
+				System.out.println("The computer chose rock");
+			}
+			else if (computer == 2)
+			{
+				System.out.println("The computer chose paper");
+			}
+			else if (computer == 3)
+			{
+				System.out.println("The computer chose scissor");
+			}
+			if ((choice == 1 && computer == 1) || (choice == 2 && computer == 2)
+			|| (choice == 3 && computer == 3))
+			{
+				System.out.println("It is a tie");
+			}
+			else
+				if ((choice == 1 && computer == 3) || (choice == 2 && computer == 1) || (choice == 3 && computer == 2))
+				{
+					System.out.println("You win");
+					playerWins++;
+				}
+			else
+			{
+				System.out.println("you lose");
+				computerWins++;
+			}	
+			System.out.println("Enter 1 to play again; 2 to quit");
+			input = sc.nextInt();
+			while ((input != 1) && (input != 2))
+			{
+				System.out.println("Invalid choice");
+				System.out.println("Enter 1 to play again; 2 to quit");
+				input = sc.nextInt();
+			}
+			if (input == 2)
+			{
+				System.out.println("Player wins: " + playerWins);
+				System.out.println("Computer wins: " + computerWins);
+			}
+			//////////////////////////////////////// Now try and make it have a scoreboard and not use numbers for input in V3
+		}
+	}// main
+}// class
